@@ -1,0 +1,8 @@
+*{margin: 0px; padding: 0px; box-sizing: border-box;}
+.row{display: grid; grid-template-columns: auto auto auto auto; gap: 10px;}
+.news{border: 1px solid blue;}
+.news img{height: auto; max-width: 100%;}
+.data{padding: 10px; line-height: 28px;}
+
+.menu{padding: 15px 0px; background: lightblue; }
+.menu a{text-decoration: none; padding: 15px 30px;}
