@@ -1,80 +1,122 @@
-/*
- function getdata(){
-  let result=fetch("https://newsapi.org/v2/everything?q=bitcoin&apiKey=12687860cbf640a3996aeb66e1547a6c")
-// console.log(result);
-result.then((res)=>{
- // console.log(res.json());
- res.json().then((pro)=>{
-  console.log(pro.articles);
+const myapi = {
+  articles: [
 
- })
-})
- }
-   getdata()
-*/
-   
-document.addEventListener('DOMContentLoaded',function(){
-  let mylink=document.getElementsByTagName("a")
-  mylink[0].addEventListener("click",function(){
-    getdata('all')
-  })
-   
-  mylink[1].addEventListener("click",function(){
-    getdata('sports')
-  })
-  mylink[2].addEventListener("click",function(){
-    getdata('business')
-  })
-})
+    {
+      id: 1,
+      title: "Sports Update",
+      description: "India wins the match",
+      url: "https://www.youtube.com/results?search_query=sports+yaari",
+      urlToImage: "images/image.png",
+      category: "Sports"
+    },
+    {
+      id: 2,
+      title: "Sports Update",
+      description: "India wins the match",
+      url: "https://www.youtube.com/results?search_query=sports+yaari",
+      urlToImage: "images/sports1.jpg",
+      category: "Sports"
+    },
+    {
+      id: 3,
+      title: "Sports Update",
+      description: "India wins the match",
+      url: "https://www.youtube.com/results?search_query=sports+yaari",
+      urlToImage: "images/sports2.jpg",
+      category: "Sports"
+    },
+    {
+      id: 4,
+      title: "Sports Update",
+      description: "India wins the match",
+      url: "https://www.youtube.com/results?search_query=sports+yaari",
+      urlToImage: "images/sports3.webp",
+      category: "Sports"
+    },
+    {
+      id: 1,
+      title: "Business Growth",
+      description: "Startup funding increases",
+      url: "https://www.youtube.com/results?search_query=business+news",
+      urlToImage: "images/business1.webp",
+      category: "Business"
 
+    },
+    {
+      id: 2,
+      title: "Business Growth",
+      description: "Startup funding increases",
+      url: "https://www.youtube.com/results?search_query=business+news",
+      urlToImage: "images/business2.jpg",
+      category: "Business"
 
+    },
+    {
+      id: 3,
+      title: "Business Growth",
+      description: "Startup funding increases",
+      url: "https://www.youtube.com/results?search_query=business+news",
+      urlToImage: "images/business3.avif",
+      category: "Business"
 
+    },
+    {
+      id: 4,
+      title: "Business Growth",
+      description: "Startup funding increases",
+      url: "https://www.youtube.com/results?search_query=business+news",
+      urlToImage: "images/business4.avif",
+      category: "Business"
 
+    },
+  ]
+};
 
- async function getdata(cat){
-  if(cat){
-    let result=await fetch(`https://newsapi.org/v2/everything?q=${cat}&language=hi&apiKey=12687860cbf640a3996aeb66e1547a6c`)
-    // console.log( result.json());
-   let res=await result.json()
-     //console.log(res.articles);
-     let totalresult=res.articles.map((item)=>{
-       return(
-   
-        `
-         <div class="news">
-           <img src=${item.urlToImage}>
-           <div class="data">
-           <h2>${item.title} </h2>
-           <p>${item.description}</p>
-           <a href=${item.url}>More News</a>
-           </div>
-         </div>
-        `
-       )
-     })
-     document.getElementById("myrow").innerHTML=totalresult.join(' ');
+document.addEventListener('DOMContentLoaded', function () {
+  let mylink = document.querySelectorAll("a");
+
+  mylink[0].addEventListener("click", function (event) {
+    event.preventDefault();
+    // getdata('All News');
+    getdata();
+  });
+
+  mylink[1].addEventListener("click", function (event) {
+    event.preventDefault();
+    getdata('Sports');
+
+  });
+  mylink[2].addEventListener("click", function (event) {
+    event.preventDefault();
+    getdata('Business');
+
+  });
+
+});
+
+function getdata(cat) {
+
+  let data = myapi.articles;
+
+  if (cat) {
+    data = data.filter(item => item.category === cat);
   }
-else{
-  let result=await fetch("https://newsapi.org/v2/everything?q=bitcoin&apiKey=12687860cbf640a3996aeb66e1547a6c")
- // console.log( result.json());
-let res=await result.json()
-  //console.log(res.articles);
-  let totalresult=res.articles.map((item)=>{
-    return(
 
-     `
+  let totalresult = data.map(item => {
+    return `
       <div class="news">
-        <img src=${item.urlToImage}>
+        <img src="${item.urlToImage}">
+        
         <div class="data">
-        <h2>${item.title} </h2>
-        <p>${item.description}</p>
-        <a href=${item.url}>More News</a>
+          <h2>${item.title}</h2>
+          <p>${item.description}</p>
+          <a href="${item.url}" target="_blank">More News</a>
         </div>
       </div>
-     `
-    )
-  })
-  document.getElementById("myrow").innerHTML=totalresult.join('');
+    `;
+  });
+
+  document.getElementById("myrow").innerHTML = totalresult.join('');
 }
- }
- getdata()
+
+getdata();
