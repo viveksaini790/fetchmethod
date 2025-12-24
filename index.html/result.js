@@ -6,7 +6,7 @@ const myapi = {
       title: "Sports Update",
       description: "India wins the match",
       url: "https://www.youtube.com/results?search_query=sports+yaari",
-      urlToImage: "images/image.png",
+      urlToImage: "./images/image.png",
       category: "Sports"
     },
     {
@@ -14,7 +14,7 @@ const myapi = {
       title: "Sports Update",
       description: "India wins the match",
       url: "https://www.youtube.com/results?search_query=sports+yaari",
-      urlToImage: "images/sports1.jpg",
+      urlToImage: "./images/sports1.jpg",
       category: "Sports"
     },
     {
@@ -22,7 +22,7 @@ const myapi = {
       title: "Sports Update",
       description: "India wins the match",
       url: "https://www.youtube.com/results?search_query=sports+yaari",
-      urlToImage: "images/sports2.jpg",
+      urlToImage: "./images/sports2.jpg",
       category: "Sports"
     },
     {
@@ -30,7 +30,7 @@ const myapi = {
       title: "Sports Update",
       description: "India wins the match",
       url: "https://www.youtube.com/results?search_query=sports+yaari",
-      urlToImage: "images/sports3.webp",
+      urlToImage: "./images/sports3.webp",
       category: "Sports"
     },
     {
@@ -38,7 +38,7 @@ const myapi = {
       title: "Business Growth",
       description: "Startup funding increases",
       url: "https://www.youtube.com/results?search_query=business+news",
-      urlToImage: "images/business1.webp",
+      urlToImage: "./images/business1.webp",
       category: "Business"
 
     },
@@ -47,7 +47,7 @@ const myapi = {
       title: "Business Growth",
       description: "Startup funding increases",
       url: "https://www.youtube.com/results?search_query=business+news",
-      urlToImage: "images/business2.jpg",
+      urlToImage: "./images/business2.jpg",
       category: "Business"
 
     },
@@ -56,7 +56,7 @@ const myapi = {
       title: "Business Growth",
       description: "Startup funding increases",
       url: "https://www.youtube.com/results?search_query=business+news",
-      urlToImage: "images/business3.avif",
+      urlToImage: "./images/business3.avif",
       category: "Business"
 
     },
@@ -65,7 +65,7 @@ const myapi = {
       title: "Business Growth",
       description: "Startup funding increases",
       url: "https://www.youtube.com/results?search_query=business+news",
-      urlToImage: "images/business4.avif",
+      urlToImage: "./images/business4.avif",
       category: "Business"
 
     },
@@ -120,3 +120,4 @@ function getdata(cat) {
 }
 
 getdata();
+
